@@ -1,0 +1,156 @@
+---
+/**
+ * Startseite – GlückskeksNinja Relaunch
+ * SEO: Eine H1, korrekte Heading-Hierarchie (H1 → H2 → H3)
+ * GEO: Organization + WebSite + FAQ Schema
+ */
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+
+// GEO/AIVO: FAQ-Schema für KI-Zitierfähigkeit
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Was ist GlückskeksNinja?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: site.entityDefinition,
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Warum Glückskeks-Ninja?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ein Glückskeks ist die kleinste Coaching-Einheit der Welt. Ein einziger Satz kann die Kraft haben, alles zu verändern. Der GlückskeksNinja reicht dir die Weisheiten verpackt in kleine Häppchen – ohne jedesmal Kekse futtern zu müssen.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Was bietet GlückskeksNinja?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Über 900 Affirmationen, Zitate und Sprüche, einen kostenlosen 30-Tage-Selbstliebe-Emailkurs, ein Buch bei Amazon sowie Anleitungen zum Selbstcoaching und Micro-Coaching.',
+      },
+    },
+  ],
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.name,
+  url: site.url,
+  description: site.entityDefinition,
+  sameAs: Object.values(site.social),
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: site.name,
+  url: site.url,
+  description: site.description,
+  publisher: { '@type': 'Organization', name: site.name },
+};
+
+const combinedSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [organizationSchema, websiteSchema, faqSchema],
+};
+---
+
+<Layout
+  title="GlückskeksNinja – Inspiration für jeden Tag | Hilfe zur Selbsthilfe"
+  description="Zitate, Affirmationen und Sinnsprüche als Micro-Coaching. Über 900 Impulse für Selbstliebe, Mut und persönliches Wachstum. Kostenloser Selbstliebe-Kurs."
+  schema={combinedSchema}
+>
+  <Header />
+  <main id="content" class="max-w-4xl mx-auto px-4 py-12">
+    <!-- SEO: Eine H1 pro Seite -->
+    <h1 class="text-4xl md:text-5xl font-serif font-semibold text-stone-dark mb-6">
+      Inspiration für jeden Tag.
+    </h1>
+
+    <p class="text-lg text-stone leading-relaxed mb-8">
+      Manchmal braucht es nur ein Zitat, eine Affirmation oder einen Sinnspruch zur richtigen Zeit, um dein ganzes Leben zu verändern. Diese kleinen Impulse sind wie Mini-Coaching-Sitzungen – direkt, auf den Punkt und voller Weisheit.
+    </p>
+    <p class="text-stone leading-relaxed mb-8">
+      Es gibt Menschen, die sie vielleicht als „Glückskeks-Weisheiten" abtun. Doch wer sich die Zeit nimmt, wirklich in diese Worte einzutauchen, der kann eine echte Veränderung spüren. Vielleicht reicht schon ein Satz, um dir eine völlig neue Perspektive zu schenken und dich mit deiner inneren Kraft zu verbinden.
+    </p>
+    <p class="text-stone leading-relaxed mb-12">
+      Wenn dir ein Spruch ins Auge fällt, klicke einfach drauf und lass dich inspirieren. Möchtest du mehr entdecken? <a href="/sprueche/" class="text-gold hover:text-warm-brown font-medium underline">Hier findest du noch viele weitere Sprüche</a>, die dich begleiten können.
+    </p>
+
+    <!-- Sektion: Selbstliebe-Kurs -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-serif font-semibold text-stone-dark mb-4">
+        GlückskeksNinja Spezial – 30 Tage für mehr Selbstliebe
+      </h2>
+      <p class="text-stone leading-relaxed mb-6">
+        Wir haben einen ersten Emailkurs für dich zusammengestellt, der dir dabei helfen kann dich selbst (wieder) richtig lieben zu können. Du bekommst 30 Tage lang eine Email mit einer kleinen Aufgabe für dich und alles ist kostenlos und unverbindlich. Wenn du alle Aufgaben wirklich für dich bearbeitest, ist das Level an echter Selbstliebe nach den 30 Tagen sicher auf einem ganz anderen Level. Einfach ausprobieren.
+      </p>
+      <a href="/selbstliebe-kurs/" class="inline-block bg-gold hover:bg-gold-light text-white font-medium px-6 py-3 rounded-lg transition-colors">
+        Zum Selbstliebe Kurs
+      </a>
+    </section>
+
+    <!-- Sektion: Affirmationen -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-serif font-semibold text-stone-dark mb-4">
+        Affirmation für deinen Tag
+      </h2>
+      <p class="text-stone leading-relaxed mb-6">
+        Jeder Tag bringt seine eigenen Herausforderungen – aber er hält auch Geschenke für dich bereit. Manchmal ist es beides zugleich. Damit du deine Kraft nicht verlierst, sondern jeden Tag mit Mut und Zuversicht startest, findest du hier Affirmationen, die dich wirklich weiterbringen.
+      </p>
+      <p class="text-stone leading-relaxed mb-6">
+        Worte, die dich daran erinnern, wie stark du bist und was du alles schaffen kannst. Wenn du eine Affirmation gefunden hast, die dich anspricht, klicke einfach darauf und erfahre mehr darüber. Du möchtest noch mehr? <a href="/sprueche/affirmationen/" class="text-gold hover:text-warm-brown font-medium underline">Die 20 wirksamsten Affirmationen findest du hier</a>. Entdecke über 900 Affirmationen, die deinen Alltag bereichern können.
+      </p>
+      <a href="https://www.amazon.de/dp/B0DMWG9HF1?tag=gkn09-21" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-warm-brown font-medium underline">
+        Unser Buch bei Amazon
+      </a>
+    </section>
+
+    <!-- Sektion: Warum Glückskeks-Ninja? -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-serif font-semibold text-stone-dark mb-4">
+        Warum Glückskeks-Ninja?
+      </h2>
+      <p class="text-stone leading-relaxed mb-6">
+        Ein Glückskeks ist für mich die kleinste Coaching-Einheit der Welt. Ein einziger Satz kann die Kraft haben, alles zu verändern. Er schenkt dir einen neuen Blick auf dich, dein Leben und deine Situation – manchmal überraschend, aber immer mit einem wertvollen Impuls. Diese Impulse wollen wir hier sammeln und für dich nutzbar machen. Auch ohne jedesmal Kekse futtern zu müssen.
+      </p>
+      <p class="text-stone leading-relaxed mb-6">
+        Das Besondere an diesen Zitaten und Sprüchen? Sie können etwas in dir bewegen. Ein kleiner Impuls von außen, der innen große Dinge bewirken kann – wenn du bereit bist, ihn zuzulassen. Bist du bereit, dich darauf einzulassen?
+      </p>
+      <p class="text-stone leading-relaxed mb-6">
+        Diese Seite ist deine Einladung, aktiv mitzumachen. Welche Sprüche helfen dir? Welche Zitate geben dir Kraft, wenn du mal nicht weiter weißt? Teile sie mit uns und anderen. <a href="/kontakt/" class="text-gold hover:text-warm-brown font-medium underline">Was sind deine Themen?</a>
+      </p>
+      <h3 class="text-xl font-serif font-semibold text-stone-dark mb-2">
+        Selbstermächtigung ist der Schlüssel zum Glück.
+      </h3>
+      <p class="text-stone leading-relaxed mb-6">
+        Wir können natürlich keine Therapie ersetzen, wenn sie nötig sein sollte. Aber wir wollen dir helfen, dein Bewusstsein für Selbstfürsorge und Selbstliebe zu schärfen. Damit du dir selbst helfen kannst – und dir die Unterstützung holst, die du vielleicht wirklich brauchst. Unsere Seite bietet dir Anleitungen und Inspirationen zum Selbstcoaching, immer als Einladung, niemals als absolute Wahrheit.
+      </p>
+    </section>
+
+    <!-- Social Links -->
+    <section>
+      <h2 class="text-2xl font-serif font-semibold text-stone-dark mb-4">
+        Folge dem GlückskeksNinja auch auf:
+      </h2>
+      <ul class="flex flex-wrap gap-4">
+        <li><a href={site.social.facebook} target="_blank" rel="noopener noreferrer" class="text-gold hover:text-warm-brown font-medium">Facebook</a></li>
+        <li><a href={site.social.instagram} target="_blank" rel="noopener noreferrer" class="text-gold hover:text-warm-brown font-medium">Instagram</a></li>
+        <li><a href={site.social.linkedin} target="_blank" rel="noopener noreferrer" class="text-gold hover:text-warm-brown font-medium">LinkedIn</a></li>
+        <li><a href={site.social.amazon} target="_blank" rel="noopener noreferrer" class="text-gold hover:text-warm-brown font-medium">Amazon</a></li>
+        <li><a href={site.social.whatsapp} target="_blank" rel="noopener noreferrer" class="text-gold hover:text-warm-brown font-medium">WhatsApp</a></li>
+      </ul>
+    </section>
+  </main>
+  <Footer />
+</Layout>

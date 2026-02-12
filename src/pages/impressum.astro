@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Impressum | GlückskeksNinja"
+  description="Impressum und rechtliche Angaben zu GlückskeksNinja."
+  canonical="/impressum/"
+>
+  <Header />
+  <main id="content" class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-serif font-semibold text-stone-dark mb-8">
+      Impressum
+    </h1>
+    <div class="prose prose-stone max-w-none text-stone">
+      <p>Angaben gemäß § 5 TMG (Platzhalter – bitte mit rechtlichen Angaben ergänzen):</p>
+      <p class="mt-4">GlückskeksNinja<br />[Adresse]<br />[PLZ Ort]</p>
+      <p class="mt-4"><strong>Kontakt:</strong><br />[E-Mail]</p>
+      <p class="mt-4"><a href="/datenschutz/" class="text-gold hover:text-warm-brown">Datenschutzerklärung</a></p>
+    </div>
+  </main>
+  <Footer />
+</Layout>

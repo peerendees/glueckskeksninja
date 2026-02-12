@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://glueckskeksninja.de/sitemap-index.xml

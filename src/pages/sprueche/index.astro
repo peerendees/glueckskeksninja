@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { site } from '../../data/site';
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Sprüche – GlückskeksNinja',
+  description: 'Über 900 Zitate, Affirmationen und Sinnsprüche für Inspiration und Selbsthilfe.',
+  url: `${site.url}/sprueche/`,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: site.name,
+    url: site.url,
+  },
+};
+---
+
+<Layout
+  title="Sprüche – Zitate, Affirmationen & Storys | GlückskeksNinja"
+  description="Entdecke über 900 Sprüche: Zitate, Affirmationen und Storys für Inspiration, Selbstliebe und persönliches Wachstum."
+  canonical="/sprueche/"
+  schema={collectionSchema}
+>
+  <Header />
+  <main id="content" class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-serif font-semibold text-stone-dark mb-8">
+      Sprüche
+    </h1>
+    <p class="text-lg text-stone leading-relaxed mb-12">
+      Entdecke Zitate, Affirmationen und Storys, die dich inspirieren und begleiten können. Klicke auf einen Spruch, um mehr zu erfahren.
+    </p>
+    <div class="grid gap-8 md:grid-cols-2">
+      <a href="/sprueche/zitate/" class="block p-6 bg-sand/30 rounded-lg border border-sand/50 hover:border-gold transition-colors">
+        <h2 class="text-xl font-serif font-semibold text-stone-dark mb-2">Zitate</h2>
+        <p class="text-stone text-sm">Weisheiten von großen Denkern und Quellen der Inspiration.</p>
+      </a>
+      <a href="/sprueche/affirmationen/" class="block p-6 bg-sand/30 rounded-lg border border-sand/50 hover:border-gold transition-colors">
+        <h2 class="text-xl font-serif font-semibold text-stone-dark mb-2">Affirmationen</h2>
+        <p class="text-stone text-sm">Über 900 Affirmationen für Mut, Selbstliebe und Zuversicht.</p>
+      </a>
+      <a href="/sprueche/storys/" class="block p-6 bg-sand/30 rounded-lg border border-sand/50 hover:border-gold transition-colors">
+        <h2 class="text-xl font-serif font-semibold text-stone-dark mb-2">Storys</h2>
+        <p class="text-stone text-sm">Geschichten, die berühren und inspirieren.</p>
+      </a>
+    </div>
+  </main>
+  <Footer />
+</Layout>

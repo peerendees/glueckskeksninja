@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { site } from '../../data/site';
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Lebenshilfe – Selbstcoaching mit GlückskeksNinja',
+  description: 'Anleitungen und Inspirationen zum Selbstcoaching, Selbstfürsorge und Selbstliebe.',
+  url: `${site.url}/lebenshilfe/`,
+};
+---
+
+<Layout
+  title="Lebenshilfe – Selbstcoaching & Inspiration | GlückskeksNinja"
+  description="Anleitungen und Inspirationen zum Selbstcoaching. Selbstfürsorge und Selbstliebe als Einladung – nicht als absolute Wahrheit."
+  canonical="/lebenshilfe/"
+  schema={howToSchema}
+>
+  <Header />
+  <main id="content" class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-serif font-semibold text-stone-dark mb-8">
+      Lebenshilfe
+    </h1>
+    <p class="text-lg text-stone leading-relaxed mb-12">
+      Wir können keine Therapie ersetzen, wenn sie nötig sein sollte. Aber wir wollen dir helfen, dein Bewusstsein für Selbstfürsorge und Selbstliebe zu schärfen. Damit du dir selbst helfen kannst – und dir die Unterstützung holst, die du vielleicht wirklich brauchst.
+    </p>
+    <div class="space-y-6">
+      <section>
+        <h2 class="text-xl font-serif font-semibold text-stone-dark mb-2">Selbstcoaching</h2>
+        <p class="text-stone">Unsere Seite bietet dir Anleitungen und Inspirationen zum Selbstcoaching – immer als Einladung, niemals als absolute Wahrheit.</p>
+      </section>
+      <section>
+        <h2 class="text-xl font-serif font-semibold text-stone-dark mb-2">Selbstliebe-Kurs</h2>
+        <p class="text-stone mb-4">30 Tage für mehr Selbstliebe – kostenlos und unverbindlich. <a href="/selbstliebe-kurs/" class="text-gold hover:text-warm-brown font-medium underline">Hier anmelden</a>.</p>
+      </section>
+      <section>
+        <h2 class="text-xl font-serif font-semibold text-stone-dark mb-2">Affirmationen & Zitate</h2>
+        <p class="text-stone">Dein Werkzeugkasten für Selbsthilfe mit über 900 Sprüchen. <a href="/sprueche/" class="text-gold hover:text-warm-brown font-medium underline">Hier entdecken</a>.</p>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>

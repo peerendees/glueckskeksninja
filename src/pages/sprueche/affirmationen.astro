@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { site } from '../../data/site';
+
+// Beispiel-Affirmationen – in Produktion aus CMS/DB
+const affirmationen = [
+  { text: 'Ich bin mutig und gehe neue Herausforderungen an.', id: '1' },
+  { text: 'Was Du hast, können viele haben, was Du bist, kannst nur Du sein. Sei Einzigartig.', id: '2' },
+  { text: 'Selbstermächtigung ist der Schlüssel zum Glück.', id: '3' },
+];
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Affirmationen – GlückskeksNinja',
+  description: 'Über 900 Affirmationen für Mut, Selbstliebe und Zuversicht.',
+  url: `${site.url}/sprueche/affirmationen/`,
+  numberOfItems: 900,
+};
+---
+
+<Layout
+  title="Affirmationen – Über 900 für deinen Tag | GlückskeksNinja"
+  description="Affirmationen für Mut, Selbstliebe und Zuversicht. Worte, die dich daran erinnern, wie stark du bist."
+  canonical="/sprueche/affirmationen/"
+  schema={itemListSchema}
+>
+  <Header />
+  <main id="content" class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-serif font-semibold text-stone-dark mb-8">
+      Affirmationen
+    </h1>
+    <p class="text-lg text-stone leading-relaxed mb-12">
+      Entdecke hier über 900 Affirmationen, die deinen Alltag bereichern können und deinen Werkzeugkasten für Selbsthilfe füllen.
+    </p>
+    <div class="space-y-6">
+      {affirmationen.map((a) => (
+        <blockquote class="pl-6 border-l-4 border-gold text-stone-dark font-serif text-lg italic">
+          {a.text}
+        </blockquote>
+      ))}
+    </div>
+    <p class="mt-12 text-stone text-sm">
+      Weitere Affirmationen folgen. <a href="/sprueche/" class="text-gold hover:text-warm-brown font-medium">Zurück zu allen Sprüchen</a>.
+    </p>
+  </main>
+  <Footer />
+</Layout>

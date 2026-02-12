@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { site } from '../../data/site';
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Storys – GlückskeksNinja',
+  description: 'Geschichten, die berühren und inspirieren.',
+  url: `${site.url}/sprueche/storys/`,
+};
+---
+
+<Layout
+  title="Storys | GlückskeksNinja"
+  description="Geschichten, die berühren und inspirieren. Storys für Selbsthilfe und persönliches Wachstum."
+  canonical="/sprueche/storys/"
+  schema={itemListSchema}
+>
+  <Header />
+  <main id="content" class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-serif font-semibold text-stone-dark mb-8">Storys</h1>
+    <p class="text-stone leading-relaxed mb-12">
+      Geschichten, die berühren und inspirieren. <a href="/sprueche/" class="text-gold hover:text-warm-brown font-medium">Zurück zu allen Sprüchen</a>.
+    </p>
+  </main>
+  <Footer />
+</Layout>

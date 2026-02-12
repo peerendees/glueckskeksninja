@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+
+const contactSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Kontakt – GlückskeksNinja',
+  description: 'Kontaktiere GlückskeksNinja für Fragen, Themenvorschläge oder Feedback.',
+  url: `${site.url}/kontakt/`,
+  mainEntity: {
+    '@type': 'Organization',
+    name: site.name,
+    url: site.url,
+    sameAs: Object.values(site.social),
+  },
+};
+---
+
+<Layout
+  title="Kontakt – GlückskeksNinja"
+  description="Kontaktiere GlückskeksNinja. Teile deine Themen, Fragen oder Feedback mit uns."
+  canonical="/kontakt/"
+  schema={contactSchema}
+>
+  <Header />
+  <main id="content" class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-serif font-semibold text-stone-dark mb-8">
+      Kontakt
+    </h1>
+    <div class="prose prose-stone max-w-none">
+      <p class="text-stone leading-relaxed mb-6">
+        Möchtest du dich mit uns austauschen? Welche Sprüche helfen dir? Welche Zitate geben dir Kraft? Teile deine Ideen für Micro-Coaching mit uns und verrate uns, welche Themen dich beschäftigen und wo du Unterstützung suchst.
+      </p>
+      <h2 class="text-xl font-serif font-semibold text-stone-dark mb-4">
+        So erreichst du uns
+      </h2>
+      <ul class="space-y-2 text-stone mb-8">
+        <li><a href={site.social.facebook} target="_blank" rel="noopener noreferrer" class="text-gold hover:text-warm-brown">Facebook</a></li>
+        <li><a href={site.social.instagram} target="_blank" rel="noopener noreferrer" class="text-gold hover:text-warm-brown">Instagram</a></li>
+        <li><a href={site.social.linkedin} target="_blank" rel="noopener noreferrer" class="text-gold hover:text-warm-brown">LinkedIn</a></li>
+        <li><a href={site.social.whatsapp} target="_blank" rel="noopener noreferrer" class="text-gold hover:text-warm-brown">WhatsApp Community</a></li>
+      </ul>
+      <p class="text-stone text-sm">
+        Wir freuen uns auf deine Nachricht und antworten so schnell wie möglich.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</Layout>

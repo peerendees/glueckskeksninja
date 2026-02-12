@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.name,
+  url: site.url,
+  description: site.entityDefinition,
+  sameAs: Object.values(site.social),
+};
+---
+
+<Layout
+  title="Über mich – GlückskeksNinja"
+  description="Lerne die Person hinter GlückskeksNinja kennen. Micro-Coaching und Inspiration für Selbsthilfe, Selbstliebe und persönliches Wachstum."
+  canonical="/ueber-mich/"
+  schema={organizationSchema}
+>
+  <Header />
+  <main id="content" class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-serif font-semibold text-stone-dark mb-8">
+      Über mich
+    </h1>
+    <div class="prose prose-stone max-w-none">
+      <p class="text-stone leading-relaxed mb-6">
+        GlückskeksNinja ist mehr als eine Website – es ist eine Einladung, dich selbst (wieder) zu entdecken und deine innere Kraft zu aktivieren.
+      </p>
+      <p class="text-stone leading-relaxed mb-6">
+        Die Idee entstand aus der Überzeugung, dass ein einziger Satz die Kraft haben kann, alles zu verändern. Ein Glückskeks als kleinste Coaching-Einheit der Welt – direkt, auf den Punkt und voller Weisheit. Ohne dass du jedesmal Kekse futtern musst.
+      </p>
+      <p class="text-stone leading-relaxed mb-6">
+        Mit über 900 Affirmationen, Zitaten und Sprüchen, einem kostenlosen 30-Tage-Selbstliebe-Kurs und einem Buch bei Amazon biete ich dir Werkzeuge für deinen Alltag. Nicht als Therapie-Ersatz, sondern als Unterstützung für Selbstfürsorge und Selbstcoaching.
+      </p>
+      <p class="text-stone leading-relaxed">
+        <a href="/kontakt/" class="text-gold hover:text-warm-brown font-medium underline">Kontaktiere mich</a>, wenn du Fragen hast oder deine Themen teilen möchtest.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</Layout>

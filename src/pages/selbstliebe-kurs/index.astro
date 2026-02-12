@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { site } from '../../data/site';
+
+const courseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: '30 Tage für mehr Selbstliebe',
+  description: 'Kostenloser Emailkurs mit 30 täglichen Aufgaben für mehr Selbstliebe.',
+  provider: {
+    '@type': 'Organization',
+    name: site.name,
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'EUR',
+  },
+};
+---
+
+<Layout
+  title="30 Tage für mehr Selbstliebe – Kostenloser Kurs | GlückskeksNinja"
+  description="Kostenloser 30-Tage-Emailkurs für mehr Selbstliebe. Täglich eine kleine Aufgabe – unverbindlich und kostenlos."
+  canonical="/selbstliebe-kurs/"
+  schema={courseSchema}
+>
+  <Header />
+  <main id="content" class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-serif font-semibold text-stone-dark mb-8">
+      GlückskeksNinja Spezial – 30 Tage für mehr Selbstliebe
+    </h1>
+    <p class="text-lg text-stone leading-relaxed mb-6">
+      Wir haben einen ersten Emailkurs für dich zusammengestellt, der dir dabei helfen kann, dich selbst (wieder) richtig lieben zu können.
+    </p>
+    <p class="text-stone leading-relaxed mb-6">
+      Du bekommst 30 Tage lang eine Email mit einer kleinen Aufgabe für dich – alles kostenlos und unverbindlich. Wenn du alle Aufgaben wirklich für dich bearbeitest, ist das Level an echter Selbstliebe nach den 30 Tagen sicher auf einem ganz anderen Level.
+    </p>
+    <div class="bg-sand/30 border border-sand/50 rounded-lg p-8 my-12">
+      <p class="text-stone-dark font-medium mb-4">Anmeldung (Platzhalter – Integration folgt):</p>
+      <p class="text-stone text-sm">Die Anmeldung zum Selbstliebe-Kurs wird nach dem Relaunch freigeschaltet.</p>
+    </div>
+    <a href="/" class="text-gold hover:text-warm-brown font-medium underline">Zurück zur Startseite</a>
+  </main>
+  <Footer />
+</Layout>

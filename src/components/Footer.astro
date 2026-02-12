@@ -1,0 +1,49 @@
+---
+const socialLinks = [
+  { href: 'https://facebook.com/glueckskeksninja', label: 'Facebook' },
+  { href: 'https://instagram.com/glueckskeksninja', label: 'Instagram' },
+  { href: 'https://linkedin.com/company/glueckskeksninja', label: 'LinkedIn' },
+  { href: 'https://www.amazon.de/stores/author/B0DMXDFNMM', label: 'Amazon' },
+  { href: 'https://chat.whatsapp.com/DRUeIpYAlC79NvdY2t2XV7', label: 'WhatsApp' },
+];
+---
+
+<footer class="bg-sand/30 border-t border-sand/50 mt-16">
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <div class="grid gap-8 md:grid-cols-3">
+      <div>
+        <h3 class="font-serif font-semibold text-stone-dark mb-4">GlückskeksNinja</h3>
+        <p class="text-sm text-stone">
+          Inspiration für jeden Tag. Micro-Coaching durch Glückskeks-Weisheiten – direkt, auf den Punkt und voller Weisheit.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-serif font-semibold text-stone-dark mb-4">Navigation</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/" class="text-stone hover:text-gold transition-colors">Startseite</a></li>
+          <li><a href="/sprueche/" class="text-stone hover:text-gold transition-colors">Sprüche</a></li>
+          <li><a href="/lebenshilfe/" class="text-stone hover:text-gold transition-colors">Lebenshilfe</a></li>
+          <li><a href="/ueber-mich/" class="text-stone hover:text-gold transition-colors">Über mich</a></li>
+          <li><a href="/kontakt/" class="text-stone hover:text-gold transition-colors">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-serif font-semibold text-stone-dark mb-4">Folge uns</h3>
+        <ul class="space-y-2 text-sm">
+          {socialLinks.map((link) => (
+            <li>
+              <a href={link.href} target="_blank" rel="noopener noreferrer" class="text-stone hover:text-gold transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-sand/50 flex flex-wrap gap-4 text-sm text-stone">
+      <a href="/impressum/" class="hover:text-gold transition-colors">Impressum</a>
+      <a href="/datenschutz/" class="hover:text-gold transition-colors">Datenschutzerklärung</a>
+      <span>© 2026 GlückskeksNinja</span>
+    </div>
+  </div>
+</footer>

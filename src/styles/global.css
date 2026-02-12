@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Corporate Design: GlückskeksNinja */
+@theme {
+  /* Warme Farbpalette */
+  --color-cream: #F5F0E8;
+  --color-sand: #E8E0D5;
+  --color-gold: #D4A574;
+  --color-gold-light: #E8B88A;
+  --color-warm-brown: #8B7355;
+  --color-stone: #5C5346;
+  --color-stone-dark: #3D3630;
+}
+
+@layer base {
+  body {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 600;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-gold);
+  color: white;
+  border-radius: 0.25rem;
+}
